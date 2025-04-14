@@ -3,23 +3,26 @@ let pricearray=[];
 let btn = document.getElementById("addBtn");
 btn.addEventListener('click',(event)=>{
 	event.preventDefault();
-	let input = document.getElementById("item-name-input").value;
-	let price = document.getElementById("item-price-input").value;
+	let input = document.getElementById("item-name-input");
+	let price = document.getElementById("item-price-input");
 	let tableBody=document.getElementById("tableBody"); 
 	
-	console.log(input);
-	console.log(price);
-	if(input=="" || price==""){
+	console.log(input.value);
+	console.log(price.value);
+	if(input.value=="" || price.value==""){
 		alert("Please enter valid data");
 	}
 
 	tableBody.innerHTML+=`
 	<tr>
-		<td>${input}</td>
-		<td>${price}</td>
+		<td>${input.value}</td>
+		<td>${price.value}</td>
 	</tr>`
 	
-	handleTotal(pricearray, price);
+	handleTotal(pricearray, price.value);
+	
+	input.value="";
+	price.value="";
 })
 
 
