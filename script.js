@@ -15,8 +15,8 @@ btn.addEventListener('click',(event)=>{
 
 	tableBody.innerHTML+=`
 	<tr>
-		<td>${input.value}</td>
-		<td>${price.value}</td>
+		<td data-ns-test="item-name">${input.value}</td>
+		<td data-ns-test="item-price">${price.value}</td>
 	</tr>`
 	
 	handleTotal(pricearray, price.value);
